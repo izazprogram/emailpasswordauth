@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'Screen/LogIn_Screen.dart';
+import 'Screen/Registration_Screen.dart';
 
 void main() {
   runApp(const MyRegFrom());

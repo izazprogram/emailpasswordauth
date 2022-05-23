@@ -1,6 +1,10 @@
 import 'dart:ffi';
 
+import 'package:emailpasswordauth/main.dart';
 import 'package:flutter/material.dart';
+
+import 'Home_Screen.dart';
+import 'Registration_Screen.dart';
 
 class MyLogInFrom extends StatefulWidget {
   const MyLogInFrom({Key? key}) : super(key: key);
@@ -65,7 +69,7 @@ class _MyLogInFromState extends State<MyLogInFrom> {
         padding: EdgeInsets.fromLTRB(20, 15, 20, 15),
         minWidth: MediaQuery.of(context).size.width/2,
         onPressed: (){
-
+        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MyHomePage()));
         },
         child: Text("Login",style: TextStyle(
           fontSize: 20
@@ -98,13 +102,32 @@ class _MyLogInFromState extends State<MyLogInFrom> {
                     SizedBox(height: 50,),
                     emailField,
                     SizedBox(
-                      height: 20,
+                      height: 40,
                     ),
                     passowrdField,
-                    SizedBox(height: 20,),
+                    SizedBox(height: 40,),
                     loginButton,
-                    
-                    Text("Already Singi ")
+                    SizedBox(height: 40,),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children:<Widget> [
+                        Text("Don't have an account?",
+                        style: TextStyle(fontSize: 15,
+                        color: Colors.black),),
+                        GestureDetector(
+
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context) => MyReg_Form()));
+                          },
+
+                          child: Text("SignUp",style: TextStyle(
+                            fontWeight: FontWeight.w600,
+                            color: Colors.redAccent,
+                            fontSize: 20,
+                          ),),
+                        )
+                      ],
+                    )
                   ],
                   
                 ),
